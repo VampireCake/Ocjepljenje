@@ -46,6 +46,7 @@ using namespace std;
         }
         return znakKarte;
     }
+
     
     bool sviZnakoviIsti (char ruka[5]) {
         bool JesteSZI;
@@ -58,13 +59,8 @@ using namespace std;
         return JesteSZI;
     }
 
-    bool royalFlush (int ruka[5]){
+    bool royalFlush (int redoslijed[5]){
         bool jesteRF;
-        int redoslijed[5];
-        for(int i=0; i<=4; i++){
-            redoslijed[i]=ruka[i];
-        }
-        sort(redoslijed, redoslijed+5);
         if(redoslijed[0] == 1 && redoslijed[1] == 10 && redoslijed[2] == 12 && redoslijed[3] == 13 && redoslijed[4] == 14){
             jesteRF = true;
         }
@@ -74,13 +70,8 @@ using namespace std;
         return jesteRF;
     }
 
-    bool straightFlush(int ruka[5]){
+    bool straightFlush(int redoslijed[5]){
         bool jesteSF;
-        int redoslijed[5];
-        for(int i=0; i<=4; i++){
-            redoslijed[i]=ruka[i];
-        }
-        sort(redoslijed, redoslijed+5);
         int prvaKarta = redoslijed[0];
         if((redoslijed[0] == prvaKarta && redoslijed[1] == prvaKarta + 1 && redoslijed[2] == prvaKarta + 2 && redoslijed[3] == prvaKarta + 3 && redoslijed[4] == prvaKarta + 4)||
         (redoslijed[0] == 7 && redoslijed[1] == 8 && redoslijed[2] == 9 && redoslijed[3] == 10 && redoslijed[4] == 12)||
@@ -94,13 +85,8 @@ using namespace std;
         return jesteSF;
     }
     
-    bool fourOfAKind(int ruka[5]){
+    bool fourOfAKind(int redoslijed[5]){
         bool jesteFOAK;
-        int redoslijed[5];
-        for(int i=0; i<=4; i++){
-            redoslijed[i]=ruka[i];
-        }
-        sort(redoslijed, redoslijed+5);
         if(redoslijed[0]==redoslijed[3] || redoslijed[1]==redoslijed[4]){
             jesteFOAK = true;
         }
@@ -110,13 +96,8 @@ using namespace std;
         return jesteFOAK;
     }
 
-    bool fullHouse(int ruka[5]){
+    bool fullHouse(int redoslijed[5]){
         bool jesteFH;
-        int redoslijed[5];
-        for(int i=0; i<=4; i++){
-            redoslijed[i]=ruka[i];
-        }
-        sort(redoslijed, redoslijed+5);
         if((redoslijed[0] == redoslijed[2] && redoslijed[3]==redoslijed[4]) || (redoslijed[0]==redoslijed[1] && redoslijed[2]==redoslijed[4])){
             jesteFH = true;
         }
@@ -126,19 +107,14 @@ using namespace std;
         return jesteFH;
     }
 
-    bool straight(int ruka[5]){
+    bool straight(int redoslijed[5]){
         bool jesteS;
-        int redoslijed[5];
-        for(int i=0; i<=4; i++){
-            redoslijed[i]=ruka[i];
-        }
-        sort(redoslijed, redoslijed+5);
         int prvaKarta = redoslijed[0];
         if((redoslijed[0] == prvaKarta && redoslijed[1] == prvaKarta + 1 && redoslijed[2] == prvaKarta + 2 && redoslijed[3] == prvaKarta + 3 && redoslijed[4] == prvaKarta + 4)||
-        (redoslijed[0] == 7 && redoslijed[1] == 8 && redoslijed[2] == 9 && redoslijed[3] == 10 && redoslijed[4] == 12)||
-        (redoslijed[0] == 8 && redoslijed[1] == 9 && redoslijed[2] == 10 && redoslijed[3] == 12 && redoslijed[4] == 13)||
-        (redoslijed[0] == 9 && redoslijed[1] == 10 && redoslijed[2] == 12 && redoslijed[3] == 13 && redoslijed[4] == 14)||
-        (redoslijed[0] == 1 && redoslijed[1] == 10 && redoslijed[2] == 12 && redoslijed[3] == 13 && redoslijed[4] == 14)){
+           (redoslijed[0] == 7 && redoslijed[1] == 8 && redoslijed[2] == 9 && redoslijed[3] == 10 && redoslijed[4] == 12)||
+           (redoslijed[0] == 8 && redoslijed[1] == 9 && redoslijed[2] == 10 && redoslijed[3] == 12 && redoslijed[4] == 13)||
+           (redoslijed[0] == 9 && redoslijed[1] == 10 && redoslijed[2] == 12 && redoslijed[3] == 13 && redoslijed[4] == 14)||
+           (redoslijed[0] == 1 && redoslijed[1] == 10 && redoslijed[2] == 12 && redoslijed[3] == 13 && redoslijed[4] == 14)){
             jesteS = true;
         }
         else{
@@ -147,13 +123,8 @@ using namespace std;
         return jesteS;
     }
 
-    bool threeOfAKind(int ruka[5]){
+    bool threeOfAKind(int redoslijed[5]){
         bool jesteTOAK;
-        int redoslijed[5];
-        for(int i=0; i<=4; i++){
-            redoslijed[i]=ruka[i];
-        }
-        sort(redoslijed, redoslijed+5);
         if(redoslijed[0]==redoslijed[2] || redoslijed[1]==redoslijed[3] || redoslijed[2]==redoslijed[4]){
             jesteTOAK = true;
         }
@@ -163,13 +134,8 @@ using namespace std;
         return jesteTOAK;
     }
 
-    bool twoPair(int ruka[5]){
+    bool twoPair(int redoslijed[5]){
         bool jesteTP;
-        int redoslijed[5];
-        for(int i=0; i<=4; i++){
-            redoslijed[i]=ruka[i];
-        }
-        sort(redoslijed, redoslijed+5);
         if((redoslijed[0]==redoslijed[1] && redoslijed[2]==redoslijed[3])||
            (redoslijed[0]==redoslijed[1] && redoslijed[3]==redoslijed[4])||
            (redoslijed[1]==redoslijed[2] && redoslijed[3]==redoslijed[4])){
@@ -181,13 +147,8 @@ using namespace std;
         return jesteTP;
     }
 
-    bool onePair(int ruka[5]){
+    bool onePair(int redoslijed[5]){
         bool jesteOP;
-        int redoslijed[5];
-        for(int i=0; i<=4; i++){
-            redoslijed[i]=ruka[i];
-        }
-        sort(redoslijed, redoslijed+5);
         if(redoslijed[0]==redoslijed[1] || redoslijed[1]==redoslijed[2] || redoslijed[2]==redoslijed[3] || redoslijed[3]==redoslijed[4]){
             jesteOP = true;
         }
@@ -197,11 +158,23 @@ using namespace std;
         return jesteOP;
     }
 
-    int highCard(int ruka[5]){
-        int redoslijed[5];
-        for(int i=0; i<=4; i++){
-            redoslijed[i]=ruka[i];
-        }
-        sort(redoslijed, redoslijed+5);
+    int highCard(int redoslijed[5]){
         return redoslijed[4];
     }
+
+
+    float kojiFH(int nekiFH[5]){
+        float tajFH;
+        if(nekiFH[1]==nekiFH[3]){
+            tajFH = 1.3;
+        }
+        if(nekiFH[2]==nekiFH[4]){
+            tajFH = 2.4;
+        }
+        if(nekiFH[3]==nekiFH[5]){
+            tajFH = 3.5;
+        }
+        return tajFH;
+    }
+
+    // fje fullhouse, TOAK, two pair i pair trebaju da kazu gdje se nalazi ta kombinacija (koja je velicina)

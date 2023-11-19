@@ -9,7 +9,8 @@ int main(){
     bool ispravnaRuka = true;
     char znakKarte [5];
     int brojKarte [5];
-    int score[10]; //prvi ide za koja je kombinacija, ostali za poredenja ostalih (nije nuzno 10, vjrv je manje)
+    int kartePoRedoslijedu[5];
+    float score[10]; //prvi ide za koja je kombinacija, ostali za poredenja ostalih (nije nuzno 10, vjrv je manje)
     cout<<"Unosite svoje karte."<<endl;
 
     while(ispravnaRuka){
@@ -18,6 +19,7 @@ int main(){
             znakKarte[i] = unosZnakaKarte();
             cout<<"Unesite broj "<< i+1 <<". karte:"<<endl;
             brojKarte[i] = unosBrojaKarte();
+            kartePoRedoslijedu[i] = znakKarte[i];
         }
         cout<<endl;
 
@@ -34,14 +36,19 @@ int main(){
             }
         }
     }
+
+    sort(kartePoRedoslijedu, kartePoRedoslijedu + 5);
+
+
+
     // score za poredenje ko ce da win-a treba biti napisan, da ne moze biti vise istih karata
 
     if(sviZnakoviIsti(znakKarte)){
-        if(royalFlush(brojKarte)){
+        if(royalFlush(kartePoRedoslijedu)){
             cout<<"Imate Royal Flush"<<endl;
             score[0] = 10;
         }
-        else if (straightFlush(brojKarte)){
+        else if (straightFlush(kartePoRedoslijedu)){
             cout<<"Imate Straight Flush"<<endl;
             score[0] = 9;
         }
@@ -52,34 +59,41 @@ int main(){
 
     }
     else{
-        if(fourOfAKind(brojKarte)){
+        if(fourOfAKind(kartePoRedoslijedu)){
             cout<<"Imate Four Of A Kind"<<endl;
             score[0] = 8;
         }
-        else if(fullHouse(brojKarte)){
-            cout<<"Imate Full House"<<endl;
-            score[0] = 7;
-        }
-        else if(straight(brojKarte)){
-            cout<<"Imate Straight"<<endl;
-            score[0] = 5;
-        }
-        else if(threeOfAKind(brojKarte)){
-            cout<<"Imate Three Of A Kind"<<endl;
-            score[0] = 4;
-        }
-        else if(twoPair(brojKarte)){
-            cout<<"Imate Two Pair"<<endl;
-            score[0] = 3;
-        }
-        else if(onePair(brojKarte)){
-            cout<<"Imate Pair"<<endl;
-            score[0] = 2;
-        }
         else{
-            cout<<"Imate High Card"<<endl;
-            score[0] = 1;
-        } //ukoliko ima high card 7 da izade poruka "Imate kitu" ili tako nesto (7 je najgori high card)
+            if(fullHouse(kartePoRedoslijedu)){
+                cout<<"Imate Full House"<<endl;
+                score[0] = 7;
+                score[1] = kojiFH(kartePoRedoslijedu);
+            }
+            else if(straight(kartePoRedoslijedu)){
+                cout<<"Imate Straight"<<endl;
+                score[0] = 5;
+            }
+            else{
+                if(threeOfAKind(kartePoRedoslijedu)){
+                    cout<<"Imate Three Of A Kind"<<endl;
+                    score[0] = 4;
+                }
+                else if(twoPair(kartePoRedoslijedu)){
+                    cout<<"Imate Two Pair"<<endl;
+                    score[0] = 3;
+                }
+                else{
+                    if(onePair(kartePoRedoslijedu)){
+                        cout<<"Imate Pair"<<endl;
+                        score[0] = 2;
+                    }
+                    else{
+                        cout<<"Imate High Card"<<endl;
+                        score[0] = 1;
+                    } //ukoliko ima high card 7 da izade poruka "Imate kitu" ili tako nesto (7 je najgori high card)
+                }
+            }
+        }
     }
-    cout<<score[0]<<endl;
+    cout<<score[0]<<endl<<score[1];
 }
