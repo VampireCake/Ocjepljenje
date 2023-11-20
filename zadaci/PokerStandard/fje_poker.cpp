@@ -163,7 +163,7 @@ using namespace std;
     }
 
     int snagaSF(int nekiSF[5]){
-        return nekiSF[4];         //testiranje streight flush-a
+        return nekiSF[4];        
     }
 
     float kojiFOAK(int nekiFOAK[5]){
@@ -212,6 +212,26 @@ using namespace std;
         else{
             return nekiFH[0];
         }
+    }
+
+    int snaga1F(int nekiF[5]){
+        return nekiF[4];
+    }
+
+    int snaga2F(int nekiF[5]){
+        return nekiF[3];
+    }
+
+    int snaga3F(int nekiF[5]){
+        return nekiF[2];
+    }
+
+    int snaga4F(int nekiF[5]){
+        return nekiF[1];
+    }
+
+    int snaga5F(int nekiF[5]){
+        return nekiF[0];
     }
 
     // fje fullhouse, TOAK, two pair i pair trebaju da kazu gdje se nalazi ta kombinacija (koja je velicina)

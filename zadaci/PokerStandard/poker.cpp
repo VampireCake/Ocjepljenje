@@ -56,6 +56,11 @@ int main(){
         else{
             cout<<"Imate Flush"<<endl;
             score[0] = 6;
+            score[1] = snaga1F(kartePoRedoslijedu);
+            score[2] = snaga2F(kartePoRedoslijedu);
+            score[3] = snaga3F(kartePoRedoslijedu);
+            score[4] = snaga4F(kartePoRedoslijedu);
+            score[5] = snaga5F(kartePoRedoslijedu);
         }
 
     }
@@ -66,7 +71,7 @@ int main(){
             score[1] = snagaFOAK(kartePoRedoslijedu);
             score[2] = snaga2FOAK(kartePoRedoslijedu, kojiFOAK(kartePoRedoslijedu));
         }
-        
+
         else{
             if(fullHouse(kartePoRedoslijedu)){
                 cout<<"Imate Full House"<<endl;
