@@ -10,7 +10,7 @@ int main(){
     char znakKarte [5];
     int brojKarte [5];
     int kartePoRedoslijedu[5];
-    float score[10]; //prvi ide za koja je kombinacija, ostali za poredenja ostalih (nije nuzno 10, vjrv je manje)
+    float score[6]; 
     cout<<"Unosite svoje karte."<<endl;
 
     while(ispravnaRuka){
@@ -83,28 +83,45 @@ int main(){
             else if(straight(kartePoRedoslijedu)){
                 cout<<"Imate Straight"<<endl;
                 score[0] = 5;
+                score[1] = snagaS(kartePoRedoslijedu);
             }
             else{
                 if(threeOfAKind(kartePoRedoslijedu)){
                     cout<<"Imate Three Of A Kind"<<endl;
                     score[0] = 4;
+                    score[1] = snagaTOAK(kartePoRedoslijedu);
                 }
                 else if(twoPair(kartePoRedoslijedu)){
                     cout<<"Imate Two Pair"<<endl;
                     score[0] = 3;
+                    score[1] = snaga1TP(kartePoRedoslijedu, kojiTP(kartePoRedoslijedu));
+                    score[2] = snaga2TP(kartePoRedoslijedu, kojiTP(kartePoRedoslijedu));
+                    score[3] = snaga3TP(kartePoRedoslijedu, kojiTP(kartePoRedoslijedu));
                 }
                 else{
                     if(onePair(kartePoRedoslijedu)){
                         cout<<"Imate Pair"<<endl;
                         score[0] = 2;
+                        score[1] = snaga1P(kartePoRedoslijedu, kojiP(kartePoRedoslijedu));
+                        score[2] = snaga2P(kartePoRedoslijedu, kojiP(kartePoRedoslijedu));
+                        score[3] = snaga3P(kartePoRedoslijedu, kojiP(kartePoRedoslijedu));
+                        score[4] = snaga4P(kartePoRedoslijedu, kojiP(kartePoRedoslijedu));
                     }
                     else{
                         cout<<"Imate High Card"<<endl;
                         score[0] = 1;
-                    } //ukoliko ima high card 7 da izade poruka "Imate kitu" ili tako nesto (7 je najgori high card)
+                        score[1] = kartePoRedoslijedu[4];
+                        score[2] = kartePoRedoslijedu[3];
+                        score[3] = kartePoRedoslijedu[2];
+                        score[4] = kartePoRedoslijedu[1];
+                        score[5] = kartePoRedoslijedu[0];
+                        if(score[1] == 7){
+                            cout<<"IMATE KITU";
+                        }
+                    }         //testirati TP, P i HC da li rade (TP je utvrdeno da ne radi kako bi trebao)
                 }
             }
         }
     }
-    cout<<score[0]<<endl<<score[1]<<score[2]<<endl<<endl<<kartePoRedoslijedu[0]<<endl<<kartePoRedoslijedu[1]<<endl<<kartePoRedoslijedu[2]<<endl<<kartePoRedoslijedu[3]<<endl<<kartePoRedoslijedu[4];
+    cout<<score[0]<<endl<<score[1]<<endl<<score[2]<<endl<<score[3]<<endl<<score[4]<<endl<<score[5]<<endl;
 }

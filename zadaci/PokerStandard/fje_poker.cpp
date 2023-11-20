@@ -234,4 +234,139 @@ using namespace std;
         return nekiF[0];
     }
 
+    int snagaS(int nekiS[5]){
+        return nekiS[4];        
+    }
+
+    int snagaTOAK(int nekiTOAK[5]){
+        return nekiTOAK[2];
+    }
+
+    float kojiTP(int nekiTP[5]){
+        float tajTP;
+        if(nekiTP[0] == nekiTP[1] && nekiTP[2] == nekiTP[3]){
+            tajTP = 1.234;
+        }
+        else if(nekiTP[0] == nekiTP[1] && nekiTP[3] == nekiTP[4]){
+            tajTP = 1.245;
+        }
+        else{
+            tajTP = 2.345;
+        }
+        return tajTP;
+    }
+
+    int snaga1TP(int nekiTP[5], float tajTP){
+        if(tajTP == 1.234){
+            return nekiTP[3];
+        }
+        else if(tajTP == 1.245){
+            return nekiTP[4];
+        }
+        else{
+            return nekiTP[4];
+        }
+    }
+
+    int snaga2TP(int nekiTP[5], float tajTP){
+        if(tajTP == 1.234){
+            return nekiTP[1];
+        }
+        if(tajTP == 1.245){
+            return nekiTP[1];
+        }
+        else{
+            return nekiTP[2];
+        }
+    }
+
+    int snaga3TP(int nekiTP[5], float tajTP){
+        if(tajTP == 1.234){
+            return nekiTP[4];
+        }
+        if(tajTP == 1.245){
+            return nekiTP[2];
+        }
+        else{
+            return nekiTP[0];
+        }
+    }
+
+    float kojiP(int nekiP[5]){
+        float tajP;
+        if(nekiP[0]==nekiP[1]){
+            tajP=1.2;
+        }
+        if(nekiP[1]==nekiP[2]){
+            tajP=2.3;
+        }
+        if(nekiP[2]==nekiP[3]){
+            tajP=3.4;
+        }
+        if(nekiP[3]==nekiP[4]){
+            tajP=4.5;
+        }
+        return tajP;
+    }
+
+    int snaga1P(int nekiP[5], float tajP){
+        if(tajP==1.2){
+            return nekiP[1];
+        }
+        if(tajP==2.3){
+            return nekiP[2];
+        }
+        if(tajP==3.4){
+            return nekiP[3];
+        }
+        if(tajP==4.5){
+            return nekiP[4];
+        }
+    }
+
+    int snaga2P(int nekiP[5], float tajP){
+        if(tajP==1.2){
+            return nekiP[4];
+        }
+        if(tajP==2.3){
+            return nekiP[4];
+        }
+        if(tajP==3.4){
+            return nekiP[4];
+        }
+        if(tajP==4.5){
+            return nekiP[2];
+        }
+    }
+
+    int snaga3P(int nekiP[5], float tajP){
+        if(tajP==1.2){
+            return nekiP[3];
+        }
+        if(tajP==2.3){
+            return nekiP[3];
+        }
+        if(tajP==3.4){
+            return nekiP[1];
+        }
+        if(tajP==4.5){
+            return nekiP[1];
+        }
+    }
+
+    int snaga4P(int nekiP[5], float tajP){
+        if(tajP==1.2){
+            return nekiP[2];
+        }
+        if(tajP==2.3){
+            return nekiP[0];
+        }
+        if(tajP==3.4){
+            return nekiP[0];
+        }
+        if(tajP==4.5){
+            return nekiP[0];
+        }
+    }
+
     // fje fullhouse, TOAK, two pair i pair trebaju da kazu gdje se nalazi ta kombinacija (koja je velicina)
