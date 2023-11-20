@@ -51,6 +51,7 @@ int main(){
         else if (straightFlush(kartePoRedoslijedu)){
             cout<<"Imate Straight Flush"<<endl;
             score[0] = 9;
+            score[1] = snagaSF(kartePoRedoslijedu);
         }
         else{
             cout<<"Imate Flush"<<endl;
@@ -62,7 +63,10 @@ int main(){
         if(fourOfAKind(kartePoRedoslijedu)){
             cout<<"Imate Four Of A Kind"<<endl;
             score[0] = 8;
+            score[1] = snagaFOAK(kartePoRedoslijedu);
+            score[2] = snaga2FOAK(kartePoRedoslijedu, kojiFOAK(kartePoRedoslijedu));
         }
+        
         else{
             if(fullHouse(kartePoRedoslijedu)){
                 cout<<"Imate Full House"<<endl;

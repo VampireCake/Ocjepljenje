@@ -162,6 +162,33 @@ using namespace std;
         return redoslijed[4];
     }
 
+    int snagaSF(int nekiSF[5]){
+        return nekiSF[4];         //testiranje streight flush-a
+    }
+
+    float kojiFOAK(int nekiFOAK[5]){
+        float tajFOAK;
+        if(nekiFOAK[0]==nekiFOAK[3]){
+            tajFOAK=1.4;
+        }
+        if(nekiFOAK[1]==nekiFOAK[4]){
+            tajFOAK=2.5;
+        }
+        return tajFOAK;
+    }
+
+    int snagaFOAK(int nekiFOAK[5]){
+        return nekiFOAK[2];
+    }
+
+    int snaga2FOAK(int nekiFOAK[5], float tajFOAK){
+        if(tajFOAK==2.5){
+            return nekiFOAK[0];
+        }
+        else{
+            return nekiFOAK[4];
+        }
+    }
 
     float kojiFH(int nekiFH[5]){
         float tajFH;
