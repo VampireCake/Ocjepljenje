@@ -125,7 +125,7 @@ using namespace std;
 
     bool threeOfAKind(int redoslijed[5]){
         bool jesteTOAK;
-        if(redoslijed[0]==redoslijed[2] || redoslijed[1]==redoslijed[3] || redoslijed[2]==redoslijed[4]){
+        if(redoslijed[0] == redoslijed[2] || redoslijed[1] == redoslijed[3] || redoslijed[2] == redoslijed[4]){
             jesteTOAK = true;
         }
         else{
@@ -165,16 +165,26 @@ using namespace std;
 
     float kojiFH(int nekiFH[5]){
         float tajFH;
-        if(nekiFH[1]==nekiFH[3]){
+        if(nekiFH[0]==nekiFH[2]){
             tajFH = 1.3;
         }
         if(nekiFH[2]==nekiFH[4]){
-            tajFH = 2.4;
-        }
-        if(nekiFH[3]==nekiFH[5]){
             tajFH = 3.5;
         }
         return tajFH;
+    }
+
+    int snagaFH(int nekiFH[5]){
+        return nekiFH[2];
+    }
+
+    int snaga2FH(int nekiFH[5], float tajFH){
+        if(tajFH==1.3){
+            return nekiFH[4];
+        }
+        else{
+            return nekiFH[0];
+        }
     }
 
     // fje fullhouse, TOAK, two pair i pair trebaju da kazu gdje se nalazi ta kombinacija (koja je velicina)

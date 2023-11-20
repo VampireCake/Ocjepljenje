@@ -19,7 +19,7 @@ int main(){
             znakKarte[i] = unosZnakaKarte();
             cout<<"Unesite broj "<< i+1 <<". karte:"<<endl;
             brojKarte[i] = unosBrojaKarte();
-            kartePoRedoslijedu[i] = znakKarte[i];
+            kartePoRedoslijedu[i] = brojKarte[i];
         }
         cout<<endl;
 
@@ -67,7 +67,9 @@ int main(){
             if(fullHouse(kartePoRedoslijedu)){
                 cout<<"Imate Full House"<<endl;
                 score[0] = 7;
-                score[1] = kojiFH(kartePoRedoslijedu);
+                score[1] = snagaFH(kartePoRedoslijedu);
+                score[2] = snaga2FH(kartePoRedoslijedu, kojiFH(kartePoRedoslijedu));
+
             }
             else if(straight(kartePoRedoslijedu)){
                 cout<<"Imate Straight"<<endl;
@@ -95,5 +97,5 @@ int main(){
             }
         }
     }
-    cout<<score[0]<<endl<<score[1];
+    cout<<score[0]<<endl<<score[1]<<score[2]<<endl<<endl<<kartePoRedoslijedu[0]<<endl<<kartePoRedoslijedu[1]<<endl<<kartePoRedoslijedu[2]<<endl<<kartePoRedoslijedu[3]<<endl<<kartePoRedoslijedu[4];
 }
