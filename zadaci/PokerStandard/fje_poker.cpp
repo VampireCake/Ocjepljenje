@@ -205,15 +205,6 @@ using namespace std;
         return nekiFH[2];
     }
 
-    int snaga2FH(int nekiFH[5], float tajFH){
-        if(tajFH==1.3){
-            return nekiFH[4];
-        }
-        else{
-            return nekiFH[0];
-        }
-    }
-
     int snaga1F(int nekiF[5]){
         return nekiF[4];
     }
@@ -310,63 +301,71 @@ using namespace std;
     }
 
     int snaga1P(int nekiP[5], float tajP){
+        int s1P;
         if(tajP==1.2){
-            return nekiP[1];
+            s1P=nekiP[1];
         }
         if(tajP==2.3){
-            return nekiP[2];
+            s1P=nekiP[2];
         }
         if(tajP==3.4){
-            return nekiP[3];
+            s1P=nekiP[3];
         }
         if(tajP==4.5){
-            return nekiP[4];
+            s1P=nekiP[4];
         }
+        return s1P;
     }
 
     int snaga2P(int nekiP[5], float tajP){
+        int s2P;
         if(tajP==1.2){
-            return nekiP[4];
+            s2P=nekiP[4];
         }
         if(tajP==2.3){
-            return nekiP[4];
+            s2P=nekiP[4];
         }
         if(tajP==3.4){
-            return nekiP[4];
+            s2P=nekiP[4];
         }
         if(tajP==4.5){
-            return nekiP[2];
+            s2P=nekiP[2];
         }
+        return s2P;
     }
 
     int snaga3P(int nekiP[5], float tajP){
+        int s3P;
         if(tajP==1.2){
-            return nekiP[3];
+            s3P=nekiP[3];
         }
         if(tajP==2.3){
-            return nekiP[3];
+            s3P=nekiP[3];
         }
         if(tajP==3.4){
-            return nekiP[1];
+            s3P=nekiP[1];
         }
         if(tajP==4.5){
-            return nekiP[1];
+            s3P=nekiP[1];
         }
+        return s3P;
     }
 
     int snaga4P(int nekiP[5], float tajP){
+        int s4P;
         if(tajP==1.2){
-            return nekiP[2];
+            s4P=nekiP[2];
         }
         if(tajP==2.3){
-            return nekiP[0];
+            s4P=nekiP[0];
         }
         if(tajP==3.4){
-            return nekiP[0];
+            s4P=nekiP[0];
         }
         if(tajP==4.5){
-            return nekiP[0];
+            s4P=nekiP[0];
         }
+        return s4P;
     }
 
     // fje fullhouse, TOAK, two pair i pair trebaju da kazu gdje se nalazi ta kombinacija (koja je velicina)

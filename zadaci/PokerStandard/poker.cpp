@@ -10,7 +10,7 @@ int main(){
     char znakKarte [5];
     int brojKarte [5];
     int kartePoRedoslijedu[5];
-    float score[6]; 
+    float score[6]={0, 0, 0, 0, 0, 0}; 
     cout<<"Unosite svoje karte."<<endl;
 
     while(ispravnaRuka){
@@ -77,8 +77,6 @@ int main(){
                 cout<<"Imate Full House"<<endl;
                 score[0] = 7;
                 score[1] = snagaFH(kartePoRedoslijedu);
-                score[2] = snaga2FH(kartePoRedoslijedu, kojiFH(kartePoRedoslijedu));
-
             }
             else if(straight(kartePoRedoslijedu)){
                 cout<<"Imate Straight"<<endl;
@@ -116,9 +114,9 @@ int main(){
                         score[4] = kartePoRedoslijedu[1];
                         score[5] = kartePoRedoslijedu[0];
                         if(score[1] == 7){
-                            cout<<"IMATE KITU";
+                            cout<<"IMATE KITU"<<endl;
                         }
-                    }         //testirati TP, P i HC da li rade (TP je utvrdeno da ne radi kako bi trebao)
+                    }         //testirati TP, P,  (ne rade)/(ne radi opcije sto dalje broji karte)
                 }
             }
         }
