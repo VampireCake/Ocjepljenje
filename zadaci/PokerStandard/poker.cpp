@@ -41,8 +41,6 @@ int main(){
 
 
 
-    // score za poredenje ko ce da win-a treba biti napisan, da ne moze biti vise istih karata
-
     if(sviZnakoviIsti(znakKarte)){
         if(royalFlush(kartePoRedoslijedu)){
             cout<<"Imate Royal Flush"<<endl;
@@ -92,8 +90,8 @@ int main(){
                 else if(twoPair(kartePoRedoslijedu)){
                     cout<<"Imate Two Pair"<<endl;
                     score[0] = 3;
-                    score[1] = snaga1TP(kartePoRedoslijedu, kojiTP(kartePoRedoslijedu));
-                    score[2] = snaga2TP(kartePoRedoslijedu, kojiTP(kartePoRedoslijedu));
+                    score[1] = snaga1TP(kartePoRedoslijedu);
+                    score[2] = snaga2TP(kartePoRedoslijedu);
                     score[3] = snaga3TP(kartePoRedoslijedu, kojiTP(kartePoRedoslijedu));
                 }
                 else{
@@ -116,7 +114,7 @@ int main(){
                         if(score[1] == 7){
                             cout<<"IMATE KITU"<<endl;
                         }
-                    }         //testirati TP, P,  (ne rade)/(ne radi opcije sto dalje broji karte)
+                    }         
                 }
             }
         }
