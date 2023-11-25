@@ -135,5 +135,6 @@ int main(){
     }                     // treba sad uraditi matematiku za procjenu pobjede
                          // treba 1 da bude 15 (haman gotovo, imaju jos samo dvije greske)
                         // treba napraviti 12 13 14 da su J Q K (mozda 1 da je A)
+                       // malo napraviti i unos da je ljepsi
     cout<<score[0]<<endl<<score[1]<<endl<<score[2]<<endl<<score[3]<<endl<<score[4]<<endl<<score[5]<<endl;
 }
