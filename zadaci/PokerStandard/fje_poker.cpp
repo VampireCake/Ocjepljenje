@@ -352,12 +352,12 @@ using namespace std;
         return s4P;
     }
 
-    int acesInFront(int nekiRedoslijed[5]){
+    int* acesInFront(int nekiRedoslijed[5]){
         for(int i=0; i<=4; i++){
             if(nekiRedoslijed[i]==1){
                 nekiRedoslijed[i]=15;
             }
         }
         sort(nekiRedoslijed, nekiRedoslijed+5);
-        return nekiRedoslijed[5];
+        return nekiRedoslijed;
     }
