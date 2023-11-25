@@ -114,7 +114,7 @@ using namespace std;
            (redoslijed[0] == 7 && redoslijed[1] == 8 && redoslijed[2] == 9 && redoslijed[3] == 10 && redoslijed[4] == 12)||
            (redoslijed[0] == 8 && redoslijed[1] == 9 && redoslijed[2] == 10 && redoslijed[3] == 12 && redoslijed[4] == 13)||
            (redoslijed[0] == 9 && redoslijed[1] == 10 && redoslijed[2] == 12 && redoslijed[3] == 13 && redoslijed[4] == 14)||
-           (redoslijed[0] == 1 && redoslijed[1] == 10 && redoslijed[2] == 12 && redoslijed[3] == 13 && redoslijed[4] == 14)){
+           (redoslijed[0] == 15 && redoslijed[1] == 10 && redoslijed[2] == 12 && redoslijed[3] == 13 && redoslijed[4] == 14)){
             jesteS = true;
         }
         else{
@@ -352,3 +352,12 @@ using namespace std;
         return s4P;
     }
 
+    int acesInFront(int nekiRedoslijed[5]){
+        for(int i=0; i<=4; i++){
+            if(nekiRedoslijed[i]==1){
+                nekiRedoslijed[i]=15;
+            }
+        }
+        sort(nekiRedoslijed, nekiRedoslijed+5);
+        return nekiRedoslijed[5];
+    }

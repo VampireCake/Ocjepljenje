@@ -54,11 +54,11 @@ int main(){
         else{
             cout<<"Imate Flush"<<endl;
             score[0] = 6;
-            score[1] = snaga1F(kartePoRedoslijedu);
-            score[2] = snaga2F(kartePoRedoslijedu);
-            score[3] = snaga3F(kartePoRedoslijedu);
-            score[4] = snaga4F(kartePoRedoslijedu);
-            score[5] = snaga5F(kartePoRedoslijedu);
+            score[1] = snaga1F(acesInFront(kartePoRedoslijedu));
+            score[2] = snaga2F(acesInFront(kartePoRedoslijedu));
+            score[3] = snaga3F(acesInFront(kartePoRedoslijedu));
+            score[4] = snaga4F(acesInFront(kartePoRedoslijedu));
+            score[5] = snaga5F(acesInFront(kartePoRedoslijedu));
         }
 
     }
@@ -67,6 +67,9 @@ int main(){
             cout<<"Imate Four Of A Kind"<<endl;
             score[0] = 8;
             score[1] = snagaFOAK(kartePoRedoslijedu);
+            if (score[1] == 1){
+                score[1] = 15;
+            }
             score[2] = snaga2FOAK(kartePoRedoslijedu, kojiFOAK(kartePoRedoslijedu));
         }
 
@@ -75,42 +78,53 @@ int main(){
                 cout<<"Imate Full House"<<endl;
                 score[0] = 7;
                 score[1] = snagaFH(kartePoRedoslijedu);
+                if (score[1] == 1){
+                    score[1] = 15;
+                }
             }
             else if(straight(kartePoRedoslijedu)){
                 cout<<"Imate Straight"<<endl;
                 score[0] = 5;
-                score[1] = snagaS(kartePoRedoslijedu);
+                if(kartePoRedoslijedu[1]==2){
+                    score[1] = snagaS(kartePoRedoslijedu);
+                }
+                else{
+                    score[1]= snagaS(acesInFront(kartePoRedoslijedu));
+                }
             }
             else{
                 if(threeOfAKind(kartePoRedoslijedu)){
                     cout<<"Imate Three Of A Kind"<<endl;
                     score[0] = 4;
                     score[1] = snagaTOAK(kartePoRedoslijedu);
+                    if (score[1] == 1){
+                        score[1] = 15;
+                    }
                 }
                 else if(twoPair(kartePoRedoslijedu)){
                     cout<<"Imate Two Pair"<<endl;
                     score[0] = 3;
-                    score[1] = snaga1TP(kartePoRedoslijedu);
-                    score[2] = snaga2TP(kartePoRedoslijedu);
-                    score[3] = snaga3TP(kartePoRedoslijedu, kojiTP(kartePoRedoslijedu));
+                    score[1] = snaga1TP(acesInFront(kartePoRedoslijedu));
+                    score[2] = snaga2TP(acesInFront(kartePoRedoslijedu));
+                    score[3] = snaga3TP(acesInFront(kartePoRedoslijedu), kojiTP(kartePoRedoslijedu));
                 }
                 else{
                     if(onePair(kartePoRedoslijedu)){
                         cout<<"Imate Pair"<<endl;
                         score[0] = 2;
-                        score[1] = snaga1P(kartePoRedoslijedu, kojiP(kartePoRedoslijedu));
-                        score[2] = snaga2P(kartePoRedoslijedu, kojiP(kartePoRedoslijedu));
-                        score[3] = snaga3P(kartePoRedoslijedu, kojiP(kartePoRedoslijedu));
-                        score[4] = snaga4P(kartePoRedoslijedu, kojiP(kartePoRedoslijedu));
+                        score[1] = snaga1P(acesInFront(kartePoRedoslijedu), kojiP(kartePoRedoslijedu));  //treba pogledati
+                        score[2] = snaga2P(acesInFront(kartePoRedoslijedu), kojiP(kartePoRedoslijedu));
+                        score[3] = snaga3P(acesInFront(kartePoRedoslijedu), kojiP(kartePoRedoslijedu));
+                        score[4] = snaga4P(acesInFront(kartePoRedoslijedu), kojiP(kartePoRedoslijedu));
                     }
                     else{
                         cout<<"Imate High Card"<<endl;
                         score[0] = 1;
-                        score[1] = kartePoRedoslijedu[4];
-                        score[2] = kartePoRedoslijedu[3];
-                        score[3] = kartePoRedoslijedu[2];
-                        score[4] = kartePoRedoslijedu[1];
-                        score[5] = kartePoRedoslijedu[0];
+                        score[1] = acesInFront(kartePoRedoslijedu)[4];    // treba pogledati kako ovo radi
+                        score[2] = acesInFront(kartePoRedoslijedu)[3];
+                        score[3] = acesInFront(kartePoRedoslijedu)[2];
+                        score[4] = acesInFront(kartePoRedoslijedu)[1];
+                        score[5] = acesInFront(kartePoRedoslijedu)[0];
                         if(score[1] == 7){
                             cout<<"IMATE KITU"<<endl;
                         }
@@ -119,7 +133,7 @@ int main(){
             }
         }
     }                     // treba sad uraditi matematiku za procjenu pobjede
-                         // treba 1 da bude 15
+                         // treba 1 da bude 15 (haman gotovo, imaju jos samo dvije greske)
                         // treba napraviti 12 13 14 da su J Q K (mozda 1 da je A)
     cout<<score[0]<<endl<<score[1]<<endl<<score[2]<<endl<<score[3]<<endl<<score[4]<<endl<<score[5]<<endl;
 }
