@@ -361,3 +361,39 @@ using namespace std;
         sort(nekiRedoslijed, nekiRedoslijed+5);
         return nekiRedoslijed;
     }
+
+    long double evaluacija(long double sansa[6]){
+        long double a=4, b=36, c=624, d=3744, e=5108, f=10200, g=54912, h=123552, x=1098240, y=1302540, O=2598960;
+        if(sansa[0]=10){
+            return 1-a/O;
+        }
+        if(sansa[0]=9){
+            return 1-(a+b)/O;
+        }
+        if(sansa[0]=8){
+            return 1-(a+b+c)/O;
+        }
+        if(sansa[0]=7){
+            return 1-(a+b+c+d)/O;
+        }
+        if(sansa[0]=6){
+            return 1-(a+b+c+d+e)/O;
+        }
+        if(sansa[0]=5){
+            return 1-(a+b+c+d+e+f)/O;
+        }
+        if(sansa[0]=4){
+            return 1-(a+b+c+d+e+f+g)/O;
+        }
+        if(sansa[0]=3){
+            return 1-(a+b+c+d+e+f+g+h)/O;
+        }
+        if(sansa[0]=2){
+            return 1-(a+b+c+d+e+f+g+h+x)/O;
+        }
+        if(sansa[0]=1){
+            return 1-(a+b+c+d+e+f+g+h+x+y)/O;
+        }
+                    // ne valja evaluacija, treba napraviti fju da valja(vazda vraca 0.999998)
+    }
+
